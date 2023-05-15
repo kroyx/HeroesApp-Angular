@@ -25,9 +25,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeflex/primeflex.min.css",
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css",
-              "node_modules/primeflex/primeflex.min.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
