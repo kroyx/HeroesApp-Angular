@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
@@ -23,5 +23,15 @@ export class HeroesService {
       .pipe(
         catchError(error => of(undefined))
       );
+  }
+
+  getSuggestions(query: string): Observable<Hero[]> {
+    let params: HttpParams = new HttpParams();
+    params = params.set('q',query);
+    params = params.set('_limit',6);
+    // params = params.append('q',query);
+    // params = params.append('_limit',6);
+    console.log({params});
+    return this.http.get<Hero[]>(`${this.baseUrl}/heroes`, {params: params});
   }
 }
