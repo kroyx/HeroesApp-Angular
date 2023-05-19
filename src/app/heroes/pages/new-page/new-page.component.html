@@ -83,7 +83,8 @@
           <button
             *ngIf="isEdit"
             color="warn"
-            mat-flat-button>
+            mat-flat-button
+            (click)="onDeleteHero()">
             <mat-icon>delete</mat-icon>
             Borrar
           </button>
