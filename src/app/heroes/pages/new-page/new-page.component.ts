@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Publisher } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'heroes-new-page',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class NewPageComponent {
 
+  public publishers: Publisher[] = Object.values(Publisher);
 }
