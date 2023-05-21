@@ -18,9 +18,9 @@
     <!-- Menú de navegación -->
     <mat-nav-list>
       <mat-list-item
+        (click)="sidenav.toggle()"
         *ngFor="let item of sidebarItems"
-        [routerLink]="item.url"
-        (click)="sidenav.toggle()">
+        [routerLink]="item.url">
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
         {{ item.label }}
       </mat-list-item>
@@ -35,7 +35,11 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="spacer"></span>
-    <button mat-button>
+
+    <span *ngIf="user">{{user.user}}</span>
+    <button
+      (click)="onLogout()"
+      mat-button>
       <mat-icon>logout</mat-icon>
       Logout
     </button>
